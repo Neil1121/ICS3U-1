@@ -1,0 +1,36 @@
+class Fitness():
+  def __init__(self, firstName, lastName, age, gender, memtype, weight, memcost):
+    self.firstName = firstName
+    self.lastName = lastName
+    self.age = age
+    self.gender = gender
+    self.memtype = memtype
+    self.weight = weight
+    self.memcost = memcost
+  #converts pounds to kilograms
+  def convertweight(self):
+    self.weight = self.weight / 2.2
+    return (self.weight)
+    
+class Weightroom(Fitness):
+  pass
+class Aquatic(Fitness):
+  pass
+class Gym(Fitness):
+  pass
+
+#membership list
+member1 = Fitness('Matt', 'Rogers', 17, 'male', 'basic', 210)
+member2 = Weightroom('Bob', 'Jones', 60, 'male', 'basic', 180)
+member3 = Aquatic('Billy', 'Bill', 14, 'male', 'basic', 130)
+member4 = Gym('Sasha', 'Finnard', 25, 'female', 'basic', 135)
+
+print (help(Weightroom))
+print (help(Aquatic))
+print (help(Gym))
+
+print (member1.age)
+print (member2.weight)
+print (member3.firstName)
+print (member4.lastName)
+print (member2.convertweight())
