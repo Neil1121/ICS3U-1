@@ -1,0 +1,69 @@
+class Fitness():
+	def __init__(self, firstName, lastName, age, gender, memType, weight):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.age = age
+		self.gender = gender
+		self.memType = memType
+		self.weight = weight
+		self.kilos = round(weight / 2.2)
+		
+	def fee(self):
+		full = 200
+		if self.memType == "Full Time":
+			return full
+		elif self.age > 65 and self.memType == "Full Time":
+			return full * 0.5
+		elif self.memType == "Part Time" and self.age > 65:
+			return full * 0.75 * 0.5
+		elif self.memType == "Part Time":
+			return full * 0.75
+		
+	def printing(self):
+		print("%s %s is a %s and %s is %s years old. %s is working out %s and %s weighs %s lbs. %s weighs %s kilograms." % (self.firstName, self.lastName, self.gender, self.firstName, self.age, self.firstName, self.memType, self.firstName, self.weight, self.firstName, self.kilos))
+		
+class WeightRoom(Fitness):
+	def fee(self):
+		full = Fitness.fee = 200 * 1.2
+		if self.memType == "Full Time":
+			return full
+		elif self.age > 65 and self.memType == "Full Time":
+			return full * 0.5
+		elif self.memType == "Part Time" and self.age > 65:
+			return full * 0.75 * 0.5
+		elif self.memType == "Part Time":
+			return full * 0.75
+class Pool(Fitness):
+	def fee(self):
+		full = Fitness.fee = 200 * 1.54
+		if self.memType == "Full Time":
+			return full
+		elif self.age > 65 and self.memType == "Full Time":
+			return full * 0.5
+		elif self.memType == "Part Time" and self.age > 65:
+			return full * 0.75 * 0.5
+		elif self.memType == "Part Time":
+			return full * 0.75
+	
+class Gym(Fitness):
+	def fee(self):
+		full = Fitness.fee = 200 * 1.49
+		if self.memType == "Full Time":
+			return full
+		elif self.age > 65 and self.memType == "Full Time":
+			return full * 0.5
+		elif self.memType == "Part Time" and self.age > 65:
+			return full * 0.75 * 0.5
+		elif self.memType == "Part Time":
+			return full * 0.75
+		
+person1 = Gym("Bob", "Burns", 23, "Male", "Part Time", 150)
+person2 = WeightRoom("Dave", "Java", 67, "Male", "Full Time", 176)
+person3 = Pool("Alex", "Johnson", 41, "Female", "Full Time", 129)
+
+print(person1.printing())
+print(person2.printing())
+print(person3.printing())
+print(person2.fee())
+print(person1.fee())
+print(person3.fee())
