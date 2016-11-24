@@ -1,0 +1,51 @@
+#create a class called acefitnessclub
+class acefitnessclub():
+  def __init__(self, member_name, member_lastname, member_gender, age, membership, member_weightpounds, member_weightkilos):
+    self.member_name = member_name
+    self.member_lastname = member_lastname
+    self.member_gender = member_gender
+    self.age = age
+    self.membership = membership
+    self.member_weightpounds = member_weightpounds
+    self.member_weightkilos = int(member_weightpounds/2.2)
+  def membership_fee(self):
+    full_membership = 200
+    if self.membership == "VIP" and self.age < 65:
+      return full_membership
+    elif self.membership == "Student" and self.age < 25:
+      return full_membership * 0.75
+    else:
+      return full_membership * 0.5 
+class weight_room(acefitnessclub):
+  pass
+class aquatic(acefitnessclub):
+  pass
+class gym(acefitnessclub):
+  pass
+  
+  #convert pounds to kilograms
+  #def Pounds_To_Kilograms(self):
+    #self.member_weight = self.member_weight/2.2
+    #return self.member_weight"""
+    
+    
+    
+    
+
+
+
+member1 = weight_room("Ken", "Guy", "Male", 42, "VIP", 220, "VIP")
+member2 = aquatic("Megan", "Chrysler", "Female", 17, "Student", 105, "Monthly")
+member3 = gym("Emma", "Trumpet", "Female", 28, "None", 125, "Daily")
+
+#print (member2.member_weightpounds)
+#print (member2.member_name)
+#print (member2.member_weightkilos)
+print (member2.membership_fee())
+print (member1.membership_fee())
+print (member3.membership_fee())
+
+#print (help(weight_room))
+
+
+#print (member2.Pounds_To_Kilograms())
