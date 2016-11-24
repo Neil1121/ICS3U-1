@@ -1,0 +1,51 @@
+'''Ace Fitness Club'''
+class ace_fitness_club():
+  def __init__(self, firstname, lastname, age, gender, memtype, weightPound):
+    self.firstname = firstname
+    self.lastname = lastname
+    self.age = age
+    self.gender = gender
+    self.memtype = memtype
+    self.weightPound = weightPound
+    self.weightKilo = round(weightPound/2.2) 
+    
+#  def convert_weight(self):
+#    self.weightPound = self.weightPound/2.2
+#    return self.weightPound
+
+  def membership_fee(self):
+    full_membership = 200
+    if self.memtype == "Fulltime":
+      return full_membership
+    elif self.memtype == "Parttime":
+      return full_membership * .75
+    elif self.age > 65:
+      return full_membership * .5 
+
+class aquatic(ace_fitness_club):
+  pass
+
+class weightroom(ace_fitness_club):
+  pass
+
+class gym(ace_fitness_club):
+  pass 
+    
+    
+#membership data    
+Member_1 = ace_fitness_club("Lilly", "Ferrier", 21, "Female", "Fulltime",120)
+Member_2 = ace_fitness_club("Connor", "Mclennan", 16, "male", "Parttime",160)
+Member_3 = ace_fitness_club("Kadar", "Jonston", 19, "Male", "Fulltime", 150)
+  
+
+#print statements
+print(Member_2.weightPound)
+print(Member_3.firstname +" " + Member_3.lastname)
+#print(Member_1.convert_weight())
+print(Member_1.weightKilo)
+print (Member_1.membership_fee())
+
+#print(help(ace_fitness_club))
+print (Member_3.weightPound)
+
+
